@@ -38,6 +38,4 @@ for familia in set_of_families:
 
 print(f'El promedio total de las edades de las familias es de {total_promedy} años')
 
-
-
 #KEY pensar: Sum_of_ages += Ages
