@@ -66,8 +66,14 @@ def rendimiento_pintura():
     return(litros_necesarios)
 
 def costos():
-    q_litros = litros necesarios()
+    a_pintar = rendimiento_pintura()
+    q_litros = a_pintar
     costo_total = 0
+    # A comprar
+    _1lts = 0
+    _4lts = 0
+    _10lts = 0
+    _20lts = 0
     # Costos
     lata_1lts = 50
     lata_4lts = 170
@@ -75,7 +81,22 @@ def costos():
     lata_20lts = 700
     # Costo por litro
     while q_litros > 0:
-        xd = 0
+        if q_litros >= 20:
+            costo_total += lata_20lts
+            q_litros -= 20
+            _20lts += 1
+        elif q_litros >= 10:
+            costo_total += lata_10lts
+            q_litros -= 10
+            _10lts += 1
+        elif q_litros >= 4:
+            costo_total += lata_4lts
+            q_litros -= 4
+            _4lts += 1
+        else:
+            costo_total += lata_1lts
+            q_litros -= 1
+            _1lts += 1
+    print(f'El costo total es de {costo_total}, vas a pintar {int(a_pintar)} metros cuadrados, necesitas comprar {_1lts} baldes de 1 lsts,{_4lts} baldes de 4 lts,{_10lts} baldes de 10 lts,{_20lts} baldes de 20 lts')
 
-
-print(rendimiento_pintura())
+costos()

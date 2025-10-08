@@ -14,5 +14,36 @@
 # @y#r, l*n#s, s@l$m%s @ l@s %nc# y 10.
 # La letra s es la más repetida y aparece 4 veces
 
+class Typeshit(Exception):
+    msg = 'La cadena debe terminar con punto'
 
+def ingreso():
+    ingreso = input('Ingresa tu oracion, tiene que terminar con ".": ')
+    ingreso.lower()
+    if ingreso[-1] != '.':
+        raise Typeshit
+    return ingreso
 
+def cambio_caracteres():
+    caracteres = {'a': '@', 'e' : '#', 'i' : '$', 'o' : '%', 'u' : '*'}
+    a = 0
+    try:
+        cadena = ingreso()
+        cadena_codificada = ''
+        for letra in cadena:
+            if letra == 'a':
+                letra = caracteres['a']
+            elif letra == 'e':
+                letra = caracteres['e']
+            elif letra == 'i':
+                letra = caracteres['i']
+            elif letra == 'o':
+                letra = caracteres['o']  
+            elif letra == 'u':
+                letra = caracteres['u']
+            cadena_codificada += letra
+        print(cadena_codificada.capitalize())
+    except Typeshit as e:
+        print(e.msg)
+
+cambio_caracteres()
