@@ -21,6 +21,14 @@ numeros = [[1,2,3],[4,5,6], [7,8,9]]
 #    iterador += 1
 #    print()
 
+#matriz = [[1,2,3],[4,5,6], [7,8,9]]
+#orden = len(matriz)
+#
+#for i in range(orden):
+#    for j in range(orden):
+#        print(matriz[j][i], end = '')
+#    print()
+
 ######################################################################
 #       Ejercicio pero ahora realmente transponiendo la matriz       #
 ######################################################################
@@ -31,9 +39,14 @@ numeros = [[1,2,3],[4,5,6], [7,8,9]]
 # El orden en este caso es n x n
 
 matriz = [[1,2,3],[4,5,6], [7,8,9]]
+transpuesta = []
+elementos = []
 orden = len(matriz)
 
 for i in range(orden):
     for j in range(orden):
-        print(matriz[j][i], end = '')
-    print()
+        elementos.append(matriz[j][i])
+    transpuesta.append(elementos)
+    elementos = []
+
+print(transpuesta)
