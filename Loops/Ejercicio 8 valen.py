@@ -38,15 +38,26 @@ numeros = [[1,2,3],[4,5,6], [7,8,9]]
 
 # El orden en este caso es n x n
 
+# matriz = [[1,2,3],[4,5,6], [7,8,9]]
+# transpuesta = []
+# elementos = []
+# orden = len(matriz)
+# 
+# for i in range(orden):
+#     for j in range(orden):
+#         elementos.append(matriz[j][i])
+#     transpuesta.append(elementos)
+#     elementos = []
+
+# print(transpuesta)
+
 matriz = [[1,2,3],[4,5,6], [7,8,9]]
-transpuesta = []
-elementos = []
 orden = len(matriz)
+x = 0
 
 for i in range(orden):
     for j in range(orden):
-        elementos.append(matriz[j][i])
-    transpuesta.append(elementos)
-    elementos = []
-
-print(transpuesta)
+        matriz[i][x] = matriz[j][i]
+        x += 1
+    x = 0
+print(matriz)
