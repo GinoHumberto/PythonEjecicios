@@ -54,10 +54,19 @@ numeros = [[1,2,3],[4,5,6], [7,8,9]]
 matriz = [[1,2,3],[4,5,6], [7,8,9]]
 orden = len(matriz)
 x = 0
+print(matriz)
 
-for i in range(orden):
-    for j in range(orden):
-        matriz[i][x] = matriz[j][i]
-        x += 1
-    x = 0
+# for i in range(orden):
+#     for j in range(orden):
+#         matriz[i][x] = matriz[j][i]
+#         x += 1
+#     x = 0
+# print(matriz)
+
+for i in range(orden-1):
+     for j in range(i +1, orden):
+        sup = matriz[i][j]
+        inf = matriz[j][i]
+        matriz[i][j] = inf
+        matriz[j][i] = sup
 print(matriz)
